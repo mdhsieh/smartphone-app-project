@@ -10,9 +10,9 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
+@app.route('/')
 def index():
-    return "Hello flask server received your request"
+    return "Hello this is flask server welcome message"
 
 if __name__ == "__main__":
     app.run()
