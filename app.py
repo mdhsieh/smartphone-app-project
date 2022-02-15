@@ -1,4 +1,5 @@
-# from flask import Flask
+# Machine learning model server
+# Need to be named app.py or wsgi.py to automatically be run
 
 # app = Flask(__name__)
 
@@ -12,7 +13,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "Hello this is flask server welcome message"
+    return "Hello, this is flask server welcome message."
 
 if __name__ == "__main__":
     app.run()
