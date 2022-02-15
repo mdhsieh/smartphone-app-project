@@ -4,10 +4,10 @@ app = Flask(__name__)
 
 
 # By default Flask uses get, same as
-@app.route('/', methods=['GET'])
-# @app.route('/')
+# @app.route('/', methods=['GET'])
+@app.route('/')
 def index():
-    return "Hello, this is flask server welcome message again."
+    return "Hello, this is flask server welcome message."
 
 if __name__ == "__main__":
     app.run()
