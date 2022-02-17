@@ -1,4 +1,7 @@
 node_modules/
 __pycache__
 .DS_Store
+# folder which checks if node can call flask, for debug only
 node-backend/
+# don't add pickle files
+*.pkl
