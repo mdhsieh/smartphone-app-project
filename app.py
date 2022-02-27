@@ -57,7 +57,10 @@ with open('housing_price_model.pkl','rb') as output_file:
    model = pickle.load(output_file) 
    print("loaded the model")
 
-pipeline = build_pipeline()
+# pipeline = build_pipeline()
+with open('housing_dataset_pipeline.pkl','rb') as output_file:
+   pipeline = pickle.load(output_file) 
+   print("loaded the pipeline")
 
 # By default Flask uses get, same as
 # @app.route('/', methods=['GET'])
