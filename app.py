@@ -145,7 +145,7 @@ def predict():
         output = round(prediction[0], 2)
         return {
             "message": "Your predicted housing price is ${}".format(output),
-            "prediction": output
+            "prediction": prediction[0]
         }
 
 if __name__ == "__main__":
