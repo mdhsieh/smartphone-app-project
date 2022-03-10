@@ -84,15 +84,15 @@ def index():
 }
 '''
 # inputs:
-# longitude = -121.89 
+# longitude = -121.89 # location of a housing district
 # latitude  =  37.29 
 # housing_median_age  = 38.0  
 # total_rooms = 1568.0  
 # total_bedrooms  = 351.0                         
 # population = 710.0 
 # households = 339.0 
-# median_income = 2.7042 
-# ocean_proximity =  '<1H OCEAN'
+# median_income = 2.7042 # multiply by 10,000 to get dollars. Highest is 15 and lowest is 0.5
+# ocean_proximity =  '<1H OCEAN' # values can be <1H OCEAN, INLAND, NEAR OCEAN, NEAR BAY, ISLAND
 # expected output = 211574.39523833
 @app.route('/prediction', methods=['POST'])
 def predict():
