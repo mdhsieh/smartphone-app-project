@@ -84,10 +84,10 @@ def index():
 }
 '''
 # inputs:
-# longitude = -121.89 # location of a housing district
+# longitude = -121.89 # location of a housing district (block group)
 # latitude  =  37.29 
 # housing_median_age  = 38.0  
-# total_rooms = 1568.0  
+# total_rooms = 1568.0  (total number of rooms in this housing district)
 # total_bedrooms  = 351.0                         
 # population = 710.0 
 # households = 339.0 
