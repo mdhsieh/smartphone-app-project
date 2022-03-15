@@ -3,4 +3,4 @@ __pycache__
 .DS_Store
 # folder with script checks if node can call flask, for debug only
 node-backend/
-housing.csv
+data_all_raw.csv
