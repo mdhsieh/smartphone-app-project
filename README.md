@@ -1,11 +1,11 @@
 ### Machine Learning Mobile App
 
 This is a React Native app which uses machine learning to predict housing data for users.
-The model is hosted on Heroku and trained on single-family house data in the San Francisco Bay Area from June 2019.
+The model is hosted on Heroku and trained on [single-family house data]() in the San Francisco Bay Area from June 2019.
 
 
 ### Development Instructions
-You can create a virtual environment by downloading [Miniconda](https://docs.conda.io/en/latest/miniconda.html) and use the `conda` command to install required dependencies in the environment, e.g.
+You can create a virtual environment by downloading [Miniconda](https://docs.conda.io/en/latest/miniconda.html) and install required dependencies in the environment, e.g.
 ```
 conda create --name flask
 conda install pip
