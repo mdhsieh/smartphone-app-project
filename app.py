@@ -27,14 +27,18 @@ def index():
     "home_size": 2220.0,
     "lot_size": 3999.0,
     "beds": 4,
-    "baths": 2.0
+    "baths": 2.0,
+    "latitude": 37.521972,
+    "longitude": -122.294079 	
 }
 '''
 # inputs:
 # home_size - float - size of house in square feet, must be < 5000
 # lot_size  - float - size of entire lot in square feet, must be < 20000
 # beds - int - number of beds, must be < 6
-# baths = - float - number of baths, partial bath would be 0.5, must be < 6
+# baths - float - number of baths, partial bath would be 0.5, must be < 6
+# latitude - float - latitude of the house locatio
+# longitude - float - longitude of the house location
 # output: price - float - must be < 5000000
 '''
 {
@@ -52,6 +56,8 @@ def predict():
         lot_size = None
         beds = None
         baths = None
+        latitude = None
+        longitude = None
 
         if request_data:
             if 'home_size' in request_data:
@@ -62,9 +68,13 @@ def predict():
                 beds = request_data['beds']
             if 'baths' in request_data:
                 baths = request_data['baths']
+            if 'latitude' in request_data:
+                latitude = request_data['latitude']
+            if 'longitude' in request_data:
+                longitude = request_data['longitude']
             
         # # get prediction
-        input_cols = [[home_size, lot_size, beds, baths]]
+        input_cols = [[home_size, lot_size, beds, baths, latitude, longitude]]
         prediction = model.predict(input_cols)
         output = round(prediction[0], 2)
         return {

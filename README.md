@@ -23,8 +23,9 @@ Fill in the URL, e.g. `http://127.0.0.1:5000/prediction`. Go to Body->raw and in
 
 Install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) to login and make changes to the server hosting the model, e.g. you want to retrain and upload an updated model. These instructions are for MacOS but for Windows use the installer as instructed in the article.
 `brew tap heroku/brew && brew install heroku`
+`heroku login`
 
-Push changes to Heroku:
+You have to get access to the Heroku project to make changes. Push changes to Heroku:
 `git push heroku master`
 
 Push changes to this repo itself:
