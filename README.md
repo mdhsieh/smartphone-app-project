@@ -1,7 +1,7 @@
 ### Machine Learning Mobile App
 
 This is a React Native app which uses machine learning to predict housing data for users.
-The model is hosted on Heroku and trained on [single-family house data]() in the San Francisco Bay Area from June 2019.
+The model is hosted on Heroku and trained on [single-family house data](https://github.com/mboles01/Realestate) in the San Francisco Bay Area from June 2019.
 
 
 ### Development Instructions
