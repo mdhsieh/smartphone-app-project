@@ -4,15 +4,24 @@ import pickle
 import pandas as pd
 import numpy as np
 
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
+
 app = Flask(__name__)
 
-# load the pickle model
-# housing price predictor, linear regression,
-# from dataset: https://github.com/mboles01/Realestate 
-# read mode
+# Load the pretrained model
+# Housing price predictor, decision tree, training steps in notebook:
+# house_price_model_cmpe_277.ipynb
+# From dataset data_all_raw.csv: https://github.com/mboles01/Realestate 
 with open('house_price_model.pkl','rb') as output_file:
    model = pickle.load(output_file) 
    print("loaded the model")
+
+# Load the pipeline of data transformations fitted on training dataset
+with open('house_price_pipeline.pkl','rb') as output_file:
+   pipeline = pickle.load(output_file) 
+   print("loaded the pipeline")
+
 
 # By default Flask uses get, same as
 # @app.route('/', methods=['GET'])
@@ -29,7 +38,8 @@ def index():
     "beds": 4,
     "baths": 2.0,
     "latitude": 37.521972,
-    "longitude": -122.294079 	
+    "longitude": -122.294079,
+    "city": "Belmont"
 }
 '''
 # inputs:
@@ -37,8 +47,10 @@ def index():
 # lot_size  - float - size of entire lot in square feet, must be < 20000
 # beds - int - number of beds, must be < 6
 # baths - float - number of baths, partial bath would be 0.5, must be < 6
-# latitude - float - latitude of the house locatio
+# latitude - float - latitude of the house location
 # longitude - float - longitude of the house location
+# city - string - house city name, must be in SF Bay Area,
+# check all available city names in training notebook
 # output: price - float - must be < 5000000
 '''
 {
@@ -58,6 +70,7 @@ def predict():
         baths = None
         latitude = None
         longitude = None
+        city = None
 
         if request_data:
             if 'home_size' in request_data:
@@ -72,10 +85,18 @@ def predict():
                 latitude = request_data['latitude']
             if 'longitude' in request_data:
                 longitude = request_data['longitude']
+            if 'city' in request_data:
+                city = request_data['city']
             
-        # # get prediction
-        input_cols = [[home_size, lot_size, beds, baths, latitude, longitude]]
-        prediction = model.predict(input_cols)
+        # get prediction
+        input_cols = [[home_size, lot_size, beds, baths, latitude, longitude, city]]
+        input_df = pd.DataFrame(
+            data=input_cols, 
+            index=np.arange(len(input_cols)), 
+            columns=['Home_size', 'Lot_size', 'Beds', 'Baths', 'Latitude', 'Longitude', 'City']
+        )
+        prepared_data = pipeline.transform(input_df)
+        prediction = model.predict(prepared_data)
         output = round(prediction[0], 2)
         return {
             "message": "Your predicted housing price is ${}".format(output),
