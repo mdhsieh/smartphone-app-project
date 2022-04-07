@@ -33,7 +33,10 @@ Run the app locally to e.g. test a POST prediction request:
 `flask run`
 
 You can check if POST requests work by installing [Postman](https://www.postman.com/).
-Fill in the URL, e.g. `http://127.0.0.1:5000/prediction`. Go to Body->raw and in dropdown pick JSON. Then put in the request JSON body and hit Send to see the response. An example request is in `app.py` comments.
+Fill in the URL, e.g. `http://127.0.0.1:5000/prediction`. Go to Body->raw and in dropdown pick JSON. Then put in the request JSON body and hit Send to see the response.
+
+### Development Instructions - Backend Model Training
+The Colab notebook used for training and testing is `house_price_model_cmpe_277.ipynb`.
 
 Install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) to login and make changes to the server hosting the model, e.g. you want to retrain and upload an updated model. These instructions are for MacOS but for Windows use the installer as instructed in the article.
 `brew tap heroku/brew && brew install heroku`
