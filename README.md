@@ -16,6 +16,18 @@ Make a POST request to model hosted on Heroku with URL:
 ```
 https://machine-learning-mobile-app.herokuapp.com/prediction
 ```
+An example request JSON body is:
+```
+{
+    "home_size": 2220.0,
+    "lot_size": 3999.0,
+    "beds": 4,
+    "baths": 2.0,
+    "latitude": 37.521972,
+    "longitude": -122.294079,
+    "city": "Belmont"
+}
+```
 Or follow Backend instructions below to test the model locally.
 
 ### Development Instructions - Backend
@@ -33,7 +45,7 @@ Run the app locally to e.g. test a POST prediction request:
 `flask run`
 
 You can check if POST requests work by installing [Postman](https://www.postman.com/).
-Fill in the URL, e.g. `http://127.0.0.1:5000/prediction`. Go to Body->raw and in dropdown pick JSON. Then put in the request JSON body and hit Send to see the response.
+Fill in the URL, e.g. `http://127.0.0.1:5000/prediction`. Go to Body->raw and in dropdown pick JSON. Then put in the example request JSON body and hit Send to see the response.
 
 ### Development Instructions - Backend Model Training
 The Colab notebook used for training and testing is `house_price_model_cmpe_277.ipynb`.
