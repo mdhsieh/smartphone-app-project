@@ -24,8 +24,7 @@ An example request JSON body is:
     "beds": 4,
     "baths": 2.0,
     "latitude": 37.521972,
-    "longitude": -122.294079,
-    "city": "Belmont"
+    "longitude": -122.294079
 }
 ```
 Or follow Backend instructions below to test the model locally.
@@ -39,6 +38,7 @@ conda install pip
 Python version tested was 3.9.7.
 
 Install dependencies:
+`conda activate flask`
 `pip install -r requirements.txt`
 
 Run the app locally to e.g. test a POST prediction request:
