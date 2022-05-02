@@ -47,6 +47,15 @@ Run the app locally to e.g. test a POST prediction request:
 You can check if POST requests work by installing [Postman](https://www.postman.com/).
 Fill in the URL, e.g. `http://127.0.0.1:5000/prediction`. Go to Body->raw and in dropdown pick JSON. Then put in the example request JSON body and hit Send to see the response.
 
+The response should be similar to the following:
+```
+{
+    "message": "Your predicted housing price is $1736228.87",
+    "prediction": 1736228.87,
+    "rounded_prediction": 1736228.87
+}
+```
+
 ### Development Instructions - Backend Model Training
 The Colab notebook used for training and testing is `house_price_model_cmpe_277.ipynb`.
 

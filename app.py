@@ -51,9 +51,9 @@ def index():
 # output: price - float - must be < 5,000,000
 '''
 {
-    "message": "Your predicted housing price is $1595000.0",
-    "prediction": 1595000.0,
-    "rounded_prediction": 1595000.0
+    "message": "Your predicted housing price is $1736228.87",
+    "prediction": 1736228.87,
+    "rounded_prediction": 1736228.87
 }
 '''
 @app.route('/prediction', methods=['POST'])
