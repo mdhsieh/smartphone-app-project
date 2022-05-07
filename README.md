@@ -1,17 +1,9 @@
 ### Machine Learning Mobile App
 
-This is a React Native app which uses machine learning to predict housing data for users.
+This is the machine learning backend of an Android app which uses machine learning to predict housing data for users. The [Android app itself is available here](https://github.com/eclewlow/house_price_estimator).
 The model is hosted on Heroku and trained on [single-family house data](https://github.com/mboles01/Realestate) in the San Francisco Bay Area from June 2019.
 
 ### Development Instructions - Frontend
-First install [Node.js](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) and NPM if haven't already. 
-Then install React Native using [Expo CLI](https://archive.reactnative.dev/docs/getting-started).
-The frontend is in a Expo project folder called `house-price-estimator`.
-```
-cd house-price-estimator
-npm install
-npm start
-```
 Make a POST request to model hosted on Heroku with URL:
 ```
 https://machine-learning-mobile-app.herokuapp.com/prediction
